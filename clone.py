@@ -1,6 +1,6 @@
 from __future__ import print_function
 from bs4 import BeautifulSoup as BS
-from pygit2 import clone_repository
+import pygit2
 
 input = open("manifest.xml", "r")
 bs = BS(input, 'lxml')
@@ -12,4 +12,4 @@ for i in range(len(rawInput)):
 
 repo_path = ['common']
 for j in repoURL:
-	repo = clone_repository(j, repo_path[0])
+	repo = pygit2.clone_repository(j, repo_path[0])
