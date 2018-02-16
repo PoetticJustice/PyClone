@@ -1,0 +1,6 @@
+<manifest>
+        <repo url="git://github.com/example/android_device_example_example.git path="device/example/example" branch="lineage-15.1" />
+        <repo url="git://github.com/example/android_vendor_example" path="vendor/example" branch="lineage-15.1" />
+	<repo url="git://github.com/example/android_kernel_example_example" path="kernel/example/example" />
+</manifest>
+
