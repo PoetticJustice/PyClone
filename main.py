@@ -10,6 +10,7 @@ class colors:
 
 try:
 	from git import Repo as REPO
+	import git
 	from bs4 import BeautifulSoup as BS
 except ImportError:
 	print("{0}One or more dependencies are missing! Please make sure that you have installed all the dependencies, before start cloning!".format(colors.FAIL), colors.ENDC)
@@ -19,8 +20,13 @@ with open("manifest.xml", "r") as file:
 		urls = manifest.select("repo")
 		for i in range(len(urls)):
 			URL = urls[i]
-			print("Cloning, ", URL['url'])
-			REPO.clone_from(URL['url'], URL['path'], branch=URL['branch'])
-			print("Done..")
+			try:
+				print("Cloning, ", URL['url'])
+				REPO.clone_from(URL['url'], URL['path'], branch=URL['branch'])
+				print("Done..")
+			except git.exc.GitError as error:
+				print(error)
+				break
 	except FileNotFoundError:
 		print(colors.FAIL, "No input file found! Please see the", colors.OKBLUE, "manifest.xml.tempelate", colors.ENDC, colors.FAIL, "file and modify it according to your own use and put that file with name manifest.xml in the same directory, where this script is! :)", colors.ENDC, colors.ENDC)
+		quit()
