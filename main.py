@@ -15,7 +15,6 @@ except ImportError:
 	print("{0}One or more dependencies are missing! Please make sure that you have installed all the dependencies, before start cloning!".format(colors.FAIL), colors.ENDC)
 with open("manifest.xml", "r") as file:
 	try:
-		file = open("manifest.xml", "r")
 		manifest = BS(file, 'xml')
 		urls = manifest.select("repo")
 		for i in range(len(urls)):
