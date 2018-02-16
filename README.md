@@ -4,7 +4,7 @@ This is a python script which uses BeautifulSoup and GitPython libraries which a
 
 HOW TO USE IT?
 
-The use of this tool is very simple. All you have to do is edit the manifest.xml.tempelate file according to your own use, and rename it to manifest.xml. And install all the dependencies, i.e BeautifulSoup4 and GitPython. For installing the dependencies just run the setupenv.sh script as:
+The use of this tool is very simple. All you have to do is edit the manifest.xml.tempelate file according to your own use (for eg. https://github.com/Exynos7870/PyClone/commit/b3e0420d4eeaa167c8353704b6f6e17dd602af4e , and rename it to manifest.xml. And install all the dependencies, i.e BeautifulSoup4 and GitPython. For installing the dependencies just run the setupenv.sh script as:
 >> ./setupenv.sh
 
 Done.
